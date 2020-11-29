@@ -25,7 +25,29 @@ public class DivisibilityExclusion {
 
     public int[] removeOdd() {
         // TODO: Remove all odd numbers from the array with for loop
-        throw new UnsupportedOperationException();
+
+        int[] numbers = getNumbers();
+        int length = numbers.length;
+        int[] numbersOddCut = new int[length];
+        int j = 0;
+
+        for (int i = 0; i < length; i++) {
+
+            if (numbers[i] % 2 == 0) {
+
+                numbersOddCut[j++] = numbers[i];
+            }
+
+        }
+
+        int[] numbersOddAndZeroCut = new int[j];
+
+        for (int i = 0; i < j; i++) {
+
+            numbersOddAndZeroCut[i] = numbersOddCut[i];
+        }
+
+        return numbersOddAndZeroCut;
     }
 
     public int[] removeEven() {
