@@ -143,7 +143,35 @@ public class DivisibilityExclusion {
 
     public int[] removeDivisibleByThree() {
         // TODO: Remove all numbers which are divisible by three from the array with while or do-while loop
-        throw new UnsupportedOperationException();
+
+        int[] numbers = getNumbers();
+        int length = numbers.length;
+        int[] numbersDivisibleByTreeCut = new int[length];
+        int j = 0;
+        int i = 0;
+
+        while (i < length) {
+
+
+            if (numbers[i] % 3 != 0) {
+
+                numbersDivisibleByTreeCut[j++] = numbers[i];
+            }
+            ++i;
+        }
+
+        int[] numbersDivisibleByTreeAndZeroCut = new int[j];
+
+        i = 0;
+
+        while (i < j) {
+
+            numbersDivisibleByTreeAndZeroCut[i] = numbersDivisibleByTreeCut[i];
+            ++i;
+        }
+
+        return numbersDivisibleByTreeAndZeroCut;
+        //throw new UnsupportedOperationException();
     }
 
     public int[] removeDivisible(int divisor) {
