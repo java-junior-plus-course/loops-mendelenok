@@ -52,7 +52,31 @@ public class DivisibilityExclusion {
 
     public int[] removeEven() {
         // TODO: Remove all even numbers from the array with for-each loop
-        throw new UnsupportedOperationException();
+
+        int[] numbers = getNumbers();
+        int length = numbers.length;
+        int[] numbersEvenCut = new int[length];
+        int j = 0;
+
+        for (int i : numbers) {
+
+            if (i % 2 != 0) {
+
+                numbersEvenCut[j++] = i;
+            }
+        }
+
+        int[] numbersEvenAndZeroCut = new int[j];
+        j = 0;
+
+        for (int i: numbersEvenAndZeroCut) {
+
+            numbersEvenAndZeroCut[j] = numbersEvenCut[j];
+            ++j;
+        }
+
+        return numbersEvenAndZeroCut;
+        //throw new UnsupportedOperationException();
     }
 
     public int[] removeEvenOrOdd(boolean odd) {
