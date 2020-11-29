@@ -176,6 +176,34 @@ public class DivisibilityExclusion {
 
     public int[] removeDivisible(int divisor) {
         // TODO: Remove all numbers which are divisible by the second argument
-        throw new UnsupportedOperationException();
+
+        int[] numbers = getNumbers();
+        int length = numbers.length;
+        int[] numbersDivisibleByDivisorCut = new int[length];
+        int j = 0;
+        int i = 0;
+
+        while (i < length) {
+
+
+            if (numbers[i] % divisor != 0) {
+
+                numbersDivisibleByDivisorCut[j++] = numbers[i];
+            }
+            ++i;
+        }
+
+        int[] numbersDivisibleByDivisorAndZeroCut = new int[j];
+
+        i = 0;
+
+        while (i < j) {
+
+            numbersDivisibleByDivisorAndZeroCut[i] = numbersDivisibleByDivisorCut[i];
+            ++i;
+        }
+
+        return numbersDivisibleByDivisorAndZeroCut;
+        //throw new UnsupportedOperationException();
     }
 }
