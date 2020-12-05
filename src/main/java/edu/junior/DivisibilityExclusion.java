@@ -35,9 +35,7 @@ public class DivisibilityExclusion {
             }
         }
         int[] numbersOddAndZeroCut = new int[j];
-        for (int i = 0; i < j; i++) {
-            numbersOddAndZeroCut[i] = numbersOddCut[i];
-        }
+        System.arraycopy(numbersOddCut,0, numbersOddAndZeroCut,0,j);
         return numbersOddAndZeroCut;
     }
 
@@ -53,14 +51,8 @@ public class DivisibilityExclusion {
             }
         }
         int[] numbersEvenAndZeroCut = new int[j];
-        j = 0;
-        for (int i: numbersEvenAndZeroCut) {
-
-            numbersEvenAndZeroCut[j] = numbersEvenCut[j];
-            ++j;
-        }
+        System.arraycopy(numbersEvenCut,0, numbersEvenAndZeroCut,0,j);
         return numbersEvenAndZeroCut;
-        //throw new UnsupportedOperationException();
     }
 
     public int[] removeEvenOrOdd(boolean odd) {
@@ -72,7 +64,6 @@ public class DivisibilityExclusion {
             //deleting even numbers
            return removeEven();
         }
-        //throw new UnsupportedOperationException();
     }
 
     public int[] removeDivisibleByThree() {
@@ -89,13 +80,8 @@ public class DivisibilityExclusion {
             ++i;
         }
         int[] numbersDivisibleByTreeAndZeroCut = new int[j];
-        i = 0;
-        while (i < j) {
-            numbersDivisibleByTreeAndZeroCut[i] = numbersDivisibleByTreeCut[i];
-            ++i;
-        }
+        System.arraycopy(numbersDivisibleByTreeCut,0, numbersDivisibleByTreeAndZeroCut,0,j);
         return numbersDivisibleByTreeAndZeroCut;
-        //throw new UnsupportedOperationException();
     }
 
     public int[] removeDivisible(int divisor) {
@@ -112,12 +98,7 @@ public class DivisibilityExclusion {
             ++i;
         }
         int[] numbersDivisibleByDivisorAndZeroCut = new int[j];
-        i = 0;
-        while (i < j) {
-            numbersDivisibleByDivisorAndZeroCut[i] = numbersDivisibleByDivisorCut[i];
-            ++i;
-        }
+        System.arraycopy(numbersDivisibleByDivisorCut,0, numbersDivisibleByDivisorAndZeroCut,0,j);
         return numbersDivisibleByDivisorAndZeroCut;
-        //throw new UnsupportedOperationException();
     }
 }
