@@ -67,40 +67,10 @@ public class DivisibilityExclusion {
         // TODO: Remove all odd or even numbers (based on the second argument) from the array with for-each loop
         if (odd) {
             //deleting odd numbers
-            int[] numbers = getNumbers();
-            int length = numbers.length;
-            int[] numbersOddCut = new int[length];
-            int j = 0;
-            for (int i : numbers) {
-                if (i % 2 == 0) {
-                    numbersOddCut[j++] = i;
-                }
-            }
-            int[] numbersOddAndZeroCut = new int[j];
-            j = 0;
-            for (int i: numbersOddAndZeroCut) {
-                numbersOddAndZeroCut[j] = numbersOddCut[j];
-                ++j;
-            }
-            return numbersOddAndZeroCut;
+          return removeOdd();
         } else {
             //deleting even numbers
-            int[] numbers = getNumbers();
-            int length = numbers.length;
-            int[] numbersEvenCut = new int[length];
-            int j = 0;
-            for (int i : numbers) {
-                if (i % 2 != 0) {
-                    numbersEvenCut[j++] = i;
-                }
-            }
-            int[] numbersEvenAndZeroCut = new int[j];
-            j = 0;
-            for (int i: numbersEvenAndZeroCut) {
-                numbersEvenAndZeroCut[j] = numbersEvenCut[j];
-                ++j;
-            }
-            return numbersEvenAndZeroCut;
+           return removeEven();
         }
         //throw new UnsupportedOperationException();
     }
